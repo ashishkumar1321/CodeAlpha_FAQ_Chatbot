@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Chatbot</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:lightyellow;
+text-align:center;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+background:#fff;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+color:#007bff;
+}
+
+input{
+width:90%;
+padding:10px;
+font-size:16px;
+margin-top:10px;
+}
+
+button{
+padding:10px 20px;
+margin-top:15px;
+font-size:16px;
+cursor:pointer;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+#answer{
+margin-top:20px;
+font-size:18px;
+color:green;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>FAQ Chatbot</h2>
+
+<p>Ask a question</p>
+
+<input type="text" id="question" placeholder="Type your question">
+
+<br>
+
+<button onclick="reply()">Ask</button>
+
+<p id="answer"></p>
+
+</div>
+
+<script>
+
+function reply(){
+
+let q=document.getElementById("question").value.toLowerCase();
+
+let ans="Sorry, I don't know the answer.";
+
+if(q.includes("hello"))
+ans="Hello! How can I help you?";
+
+else if(q.includes("name"))
+ans="I am a FAQ Chatbot.";
+
+else if(q.includes("codealpha"))
+ans="CodeAlpha provides internship opportunities.";
+
+else if(q.includes("internship"))
+ans="Complete at least 2 tasks and submit GitHub links.";
+
+else if(q.includes("certificate"))
+ans="Certificate is provided after successful completion.";
+
+else if(q.includes("thank"))
+ans="You're Welcome!";
+
+document.getElementById("answer").innerHTML=ans;
+
+}
+
+</script>
+
+</body>
+</html>
